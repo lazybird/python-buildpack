@@ -65,7 +65,7 @@ PYPY36="pypy3.6"
 # Which stack is used (for binary downloading), if none is provided (e.g. outside of Heroku)?
 DEFAULT_PYTHON_STACK="scalingo-18"
 # If pip doesn't match this version (the version we install), run the installer.
-PIP_UPDATE="20.0.2"
+PIP_UPDATE="21.2.1"
 
 for file in "$BUILD_DIR/runtime.txt" "$CACHE_DIR/.heroku/python-version" ; do
     [ -f "$file" ] || continue
@@ -82,7 +82,7 @@ done
 
 if [[ -f "$BUILD_DIR/Pipfile" ]]; then
     # Do not force pipenv users to re-install pipenv locally.
-    PIP_UPDATE="9.0.2"
+    PIP_UPDATE="20.2.1"
 fi
 
 export DEFAULT_PYTHON_STACK PIP_UPDATE
